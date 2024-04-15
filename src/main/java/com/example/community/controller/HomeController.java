@@ -50,4 +50,8 @@ public class HomeController {
         model.addAttribute("discussPost",discussPosts);
         return "index";
     }
+    @RequestMapping(path = "/error",method = RequestMethod.GET)
+    public String getErrorPage(){
+        return "/error/500";
+    }
 }
