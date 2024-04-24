@@ -6,7 +6,7 @@
 	<link rel="icon" href="https://static.nowcoder.com/images/logo_87_87.png"/>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">
 	<link rel="stylesheet" th:href="@{/css/global.css}" />
-	<title>牛客网-个人主页</title>
+	<title>校园论坛-个人主页</title>
 </head>
 <body>
 	<div class="nk-container">
@@ -80,7 +80,7 @@
 					<img th:src="${user.headerUrl}" class="align-self-start mr-4 rounded-circle" alt="用户头像" style="width:50px;">
 					<div class="media-body">
 						<h5 class="mt-0 text-warning">
-							<span th:utext="${user.username}">nowcoder</span>
+							<span th:utext="${user.username}">user</span>
 							<input type="hidden" id="entityId" th:value="${user.id}">
 							<button type="button" th:class="|btn ${hasFollowed?'btn-secondary':'btn-info'} btn-sm float-right mr-5 follow-btn|"
 									th:text="${hasFollowed?'已关注':'关注TA'}" th:if="${loginUser!=null&&loginUser.id!=user.id}">关注TA</button>
@@ -99,7 +99,7 @@
 		</div>
 
 		<!-- 尾部 -->
-		<footer class="bg-dark">
+		<footer class="bg-dark" th:replace="index::tail">
 			<div class="container">
 				<div class="row">
 					<!-- 二维码 -->
